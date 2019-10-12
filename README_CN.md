@@ -57,7 +57,11 @@ Back-end api
 ## 功能
 
 ```
-- 登录 / 注销
+- 登录(用户密码登录，手机验证码登录，第三方登录-微信，新浪微博，github登录) / 注销
+
+- 权限管理 基于restful风格 url+resquest-method 权限细粒度管理
+
+- 日志审计系统  记录系统 中更新，删除，创建操作
 
 - 多环境发布
   - dev sit stage prod
@@ -90,6 +94,28 @@ Back-end api
 
 - Clipboard(剪贴复制)
 ```
+
+## 前后端代码风格
+前段：  
+frontend
+ --build
+ --config
+ --static
+ --src
+ -------api
+ -------assets
+ -------components
+ -------directive
+ -------filters
+ -------icons
+ -------lang
+ -------router
+ -------store
+ -------styles
+ -------utils
+ -------vendor
+ -------views
+
 
 ## 安装文档
 
