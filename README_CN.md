@@ -119,40 +119,40 @@ frontend
 ## 后端代码风格详解  
 --backend  
 -----------extra_apps&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#完整第三方系统或者模块  例如xadmin-django后台  
------------logs						#后台程序日志存储目录  
------------media					#静态日志  
------------project   					#后台总体 配置，启动，url 路由，以及wsgi启动 配置  
------------utils					#后台所有系统 共用 验证，抽象 目 录  
-----------------util.py  				#公共工具方法集合  例如 远程连接，加密解密，短信发送，表结构解析  
-----------------base_mixin.py				#抽象中间件				  基础类   
-----------------base_model.py				#抽象 ORM模型 中对象  			基础类 BaseModel  
-----------------base_resource.py			#抽象  导入导出功能 自定义字段 	   基础类 BaseResource  
-----------------base_view.py				#抽象 逻辑 控制类 			基础类  BaseModelViewSet.BaseGenericViewSet  
+-----------logs&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#后台程序日志存储目录  
+-----------media&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#静态日志  
+-----------project&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#后台总体 配置，启动，url 路由，以及wsgi启动 配置  
+-----------utils&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#后台所有系统 共用 验证，抽象 目 录  
+----------------util.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#公共工具方法集合  例如 远程连接，加密解密，短信发送，表结构解析  
+----------------base_mixin.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#抽象中间件				  基础类   
+----------------base_model.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#抽象 ORM模型 中对象  			基础类 BaseModel  
+----------------base_resource.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#抽象  导入导出功能 自定义字段 	   基础类 BaseResource  
+----------------base_view.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#抽象 逻辑 控制类 			基础类  BaseModelViewSet.BaseGenericViewSet  
 
 -----------manage.py  
 -----------requirements.txt  
 -----------uwsgi.ini  
 
------------apps  
----------------cmdb  
----------------modellog  
----------------users  
----------------------××××××××××××××××××××××大部分模块都拥有这些文件×××××××××××××××××××××××××××××××××××××××××××××××××××××××× 
----------------------management					# 模块管理目录  一般存放 初始化，定时任务 操作的脚本等  
----------------------migrations					# ORM模型 django 操作数据库表结构脚步记录目录  
----------------------models.py					#ORM模型中的 对象 类  
----------------------serializers.py				# 序列化文件  
----------------------views.py					# 业务逻辑控制文件  
----------------------resources.py				#导入导出自定义字段文件  
----------------------filters.py					#查询过滤条件文件    
----------------------urls.py					#url 映射文件  
----------------------adminx.py					#django后台管理操作文件  
----------------------apps.py					#模块或者app基础信息类 添加到 总项目中 INSTALLED_APPS才会被使用  
----------------------util.py					# 模块 工具类  
+-----------apps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#模块 
+---------------cmdb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#资产管理模块  
+---------------modellog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#日志管理模块  
+---------------users  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#用户管理模块
+---------------------××××××××××××××××××××××大部分模块都拥有这些文件×××××××××××××××××××× 
+---------------------management&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 模块管理目录  一般存放 初始化，定时任务 操作的脚本等  
+---------------------migrations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ORM模型 django 操作数据库表结构脚步记录目录  
+---------------------models.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ORM模型中的 对象 类  
+---------------------serializers.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 序列化文件  
+---------------------views.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 业务逻辑控制文件  
+---------------------resources.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#导入导出自定义字段文件  
+---------------------filters.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#查询过滤条件文件    
+---------------------urls.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#url 映射文件  
+---------------------adminx.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#django后台管理操作文件  
+---------------------apps.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#模块或者app基础信息类 添加到 总项目中 INSTALLED_APPS才会被使用  
+---------------------util.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 模块 工具类  
 ---------------------××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××××   
----------------------middleware.py				#中间件 文件  
----------------------auth.py					# 去掉 csrf检查  
----------------------ldap_tool.py				#ldap操作相关  
+---------------------middleware.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#中间件 文件  
+---------------------auth.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 去掉 csrf检查  
+---------------------ldap_tool.py&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#ldap操作相关  
 
 ## 安装文档
 
