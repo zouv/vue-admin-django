@@ -270,29 +270,6 @@ export default {
       this.temp.id = id
       this.delVisible = true
     },
-    handleDownload() {
-      this.downloadLoading = true
-      import('@/vendor/Export2Excel').then(excel => {
-        const tHeader = [this.$t('table.name'), this.$t('table.cname'), this.$t('table.description')]
-        const filterVal = ['name', 'cname', 'description']
-        const data = this.formatJson(filterVal, this.list)
-        excel.export_json_to_excel({
-          header: tHeader,
-          data,
-          filename: 'role-list'
-        })
-        this.downloadLoading = false
-      })
-    },
-    formatJson(filterVal, jsonData) {
-      return jsonData.map(v => filterVal.map(j => {
-        if (j === 'date_joined') {
-          return parseTime(v[j])
-        } else {
-          return v[j]
-        }
-      }))
-    },
     sortChange(data) {
       const { prop, order } = data
       if (prop === 'id') {
