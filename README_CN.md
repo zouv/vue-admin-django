@@ -97,24 +97,24 @@ Back-end api
 
 ## 前后端代码风格
 前段：  
-frontend
- --build
- --config
- --static
- --src
- -------api
- -------assets
- -------components
- -------directive
- -------filters
- -------icons
- -------lang
- -------router
- -------store
- -------styles
- -------utils
- -------vendor
- -------views
+frontend  
+ --build  
+ --config  
+ --static  
+ --src  
+ -------api  
+ -------assets  
+ -------components  
+ -------directive  
+ -------filters  
+ -------icons  
+ -------lang  
+ -------router  
+ -------store  
+ -------styles  
+ -------utils  
+ -------vendor  
+ -------views  
 
 
 ## 安装文档
