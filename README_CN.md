@@ -136,7 +136,7 @@ frontend
 -----------apps &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#模块 
 ---------------cmdb&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#资产管理模块  
 ---------------modellog&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#日志管理模块  
----------------users  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#用户管理模块
+---------------users  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;#用户管理模块  
 ---------------------××××××××××××××××××××××大部分模块都拥有这些文件×××××××××××××××××××× 
 ---------------------management&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# 模块管理目录  一般存放 初始化，定时任务 操作的脚本等  
 ---------------------migrations&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;# ORM模型 django 操作数据库表结构脚步记录目录  
