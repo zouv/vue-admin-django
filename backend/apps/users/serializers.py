@@ -226,7 +226,7 @@ class PhoneLoginSerializer(serializers.Serializer):
     """
     phone = serializers.CharField(label="手机号", help_text="手机号", required=True, allow_blank=False, max_length=11, min_length=11)
     sms_code = serializers.CharField(required=True, write_only=True, max_length=4, min_length=4,label="验证码",
-                                 help_text="验证码",
+                                 help_text="验证码serializer.py",
                                  error_messages={
                                      "blank": "请输入验证码",
                                      "required": "请输入验证码",

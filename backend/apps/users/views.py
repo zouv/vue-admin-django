@@ -214,7 +214,7 @@ class UserViewSet(mixins.CreateModelMixin, BaseGenericViewSet):
     @action(methods=['post'], detail=False)
     def phone_login(self, request):
         """
-        手机验证码登录
+        手机验证码登录view.py
         """
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)

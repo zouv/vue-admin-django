@@ -14,7 +14,7 @@ load_dotenv(dotenv_path=os.path.join(BASE_DIR, '../.env'), override=True)
 sys.path.insert(0, BASE_DIR)
 app_dir = os.path.join(BASE_DIR, 'apps')
 sys.path.insert(0, app_dir)
-APPS = os.listdir(app_dir)
+
 sys.path.insert(0, os.path.join(BASE_DIR, 'extra_apps'))
 
 DEBUG = True if os.environ.get('DEBUG') == 'True' else False
@@ -83,10 +83,16 @@ INSTALLED_APPS = [
     'xadmin',
     'crispy_forms',
     'reversion',
+    #restful 设计风格
     'rest_framework',
+    #文档使用
     'rest_framework_swagger',
+    #token验证使用
     'rest_framework.authtoken',
+
+    #跨域
     'corsheaders',
+
     'django_filters',
     'import_export',
     'imagekit',
@@ -94,21 +100,36 @@ INSTALLED_APPS = [
     'djcelery',
 ]
 # 自动注册
+APPS = os.listdir(app_dir)
 INSTALLED_APPS.extend(['{}'.format(row) for row in APPS])
 
 
+#一般而言，中间件就是一个类，继承自MiddlewareMixin，比如说SessionMiddleware：
+#重载了两个方法，分别是process_request和process_response方法，相当于很多框架生命周期里面的钩子函数，这两个方法如果被重载了，
+# 那么在request/response的过程中，肯定会被执行，在可以选择自己需要的中间件，也可以自己定义中间件取实现不同的功能。一般而言，被用作全局拦截器使用。
 MIDDLEWARE = [
+    # 拦截请求，设置session到request
+
+    #SessionMiddleware作用
+    # 1.用户登录成功 ，服务器生成一个sessionid,保存到
+    #
     'django.contrib.sessions.middleware.SessionMiddleware',
+
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
+    # 再次拦截请求，判断是否有session(上面已加入)，设置user到request
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'crequest.middleware.CrequestMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #验证登录
     'users.middleware.AuthMiddleware',
+    #验证auth2.0
     'users.middleware.OtpAuthMiddleware',
+    #验证url是否有权限
     'users.middleware.UrlCheckMiddleware',
+
     'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
@@ -222,31 +243,25 @@ CACHES = {
 }
 
 REST_FRAMEWORK = {
+    # 配置默认的认证方式 base:账号密码验证
+    #session：session_id认证
     'DEFAULT_AUTHENTICATION_CLASSES': (
+        # drf的这一阶段主要是做验证,middleware的auth主要是设置session和user到request对象
+        # 默认的验证是按照验证列表从上到下的验证
         'users.auth.CsrfExemptSessionAuthentication',
         'rest_framework.authentication.SessionAuthentication',
         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
         'rest_framework.authentication.BasicAuthentication',
     ),
-    # 'DEFAULT_PERMISSION_CLASSES': (
-    #     'rest_framework.permissions.IsAuthenticated',
-    # ),
     'DEFAULT_FILTER_BACKENDS': (
         'django_filters.rest_framework.DjangoFilterBackend',
         'rest_framework.filters.SearchFilter',
         'rest_framework.filters.OrderingFilter',
     ),
-    # 'DEFAULT_THROTTLE_CLASSES': (
-    #     'rest_framework.throttling.AnonRateThrottle',
-    #     'rest_framework.throttling.UserRateThrottle'
-    # ),
-    # 'DEFAULT_THROTTLE_RATES': {
-    #     'anon': '3/second',
-    #     'user': '5/second'
-    # },
     'DATETIME_FORMAT': "%Y-%m-%d %H:%M:%S",
 }
 
+#token失效期
 JWT_AUTH = {
     'JWT_AUTH_COOKIE': TOKEN_NAME,
     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),
@@ -255,11 +270,14 @@ JWT_AUTH = {
     'JWT_ALLOW_REFRESH': True,
 }
 
+# 因为models使用AbstractUser
 AUTH_USER_MODEL = 'users.UserProfile'
 
+#静态文件存储路径配置
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media').replace("\\", "/")
 
+#日志配置
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': True,
@@ -321,6 +339,7 @@ LOGGING = {
 
 }
 
+#第三方登录相关
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.weibo.WeiboOAuth2',
     'social_core.backends.qq.QQOAuth2',
@@ -369,7 +388,7 @@ CONTENT_TYPE = {
     'html': 'text/html',
 }
 
-# CELERY
+# CELERY  定时任务
 import djcelery
 from celery import platforms
 from kombu import Exchange, Queue

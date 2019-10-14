@@ -140,7 +140,6 @@ class UserProfile(AbstractUser):
     last_login_ip = models.GenericIPAddressField(verbose_name='上次登录IP', help_text='上次登录IP', null=True, blank=True)
     login_count = models.IntegerField(verbose_name='登录次数', help_text='登录次数', default=0, null=True, blank=True)
     roles = models.ManyToManyField('Role', verbose_name='角色', help_text='角色', blank=True)
-    # avatar = models.ImageField(upload_to=user_avatar_path, default='avatar/default.png', verbose_name="头像", help_text='头像')
     avatar = ProcessedImageField(verbose_name="头像", help_text='头像', upload_to=user_avatar_path,
                                  default='avatar/default.jpg', processors=[ResizeToFill(120, 120)],
                                  format='JPEG', options={'quality': 60}, null=True, blank=True)
