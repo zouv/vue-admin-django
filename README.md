@@ -104,6 +104,12 @@ Back-end api
  <p align="center">
   <img width="900" src="./backend_code.png">
 </p>
+
+## 登录流程图
+ <p align="center">
+  <img width="900" src="http://www.bdkyr.com/open_galaxy/static/img/login_process.png">
+</p>
+
 ## 安装文档
 
 
