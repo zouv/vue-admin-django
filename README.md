@@ -97,12 +97,12 @@ Back-end api
 
 ## 前后端代码风格
 <p align="center">
-  <img width="900" src="./frontend_code.jpg">
+  <img width="900" src="http://www.bdkyr.com/open_galaxy/static/img/frontend_code.png">
 </p> 
 
 ## 后端代码风格详解  
  <p align="center">
-  <img width="900" src="./backend_code.png">
+  <img width="900" src="http://www.bdkyr.com/open_galaxy/static/img/backend_code.png">
 </p>
 ## 安装文档
 
