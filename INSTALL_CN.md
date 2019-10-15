@@ -39,7 +39,7 @@ Run scripts from Makefile that install all dependencies, run migrations and star
 
 ```zsh
 (env) ➜  mysql -uroot -p -e "create database open_galaxy default charset utf8;"
-(env) ➜  cp galaxy_demo/.env_example galaxy_demo/.env  #可以修改 默认安装目录以及端口
+(env) ➜  cp galaxy_demo/.env_example galaxy_demo/.env  #按照 自己的数据库，redis 等进行配置  
 (env) ➜  make init
 (env) ➜  make dev
 (env) ➜  make build-prod
