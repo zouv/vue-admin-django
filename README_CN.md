@@ -97,7 +97,7 @@ Back-end api
 
 ## 前后端代码风格
  <p align="center">
-  <img width="900" src="./frontend_code.png">
+  <img width="900" src="./frontend_code.jpg">
 </p>
 
 ## 后端代码风格详解  
