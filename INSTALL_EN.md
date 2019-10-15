@@ -42,7 +42,7 @@ Run scripts from Makefile that install all dependencies, run migrations and star
 
 ```zsh
 (env) ➜  mysql -uroot -p -e "create database open_galaxy default charset utf8;"
-(env) ➜  cp galaxy_demo/.env_example galaxy_demo/.env  @you will modify install_dir and port
+(env) ➜  cp vue-element-frontend-backend/.env_example vue-element-frontend-backend/.env  @you will modify install_dir and port
 (env) ➜  make init
 (env) ➜  make dev
 (env) ➜  make build-prod
