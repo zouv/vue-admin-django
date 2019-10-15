@@ -110,6 +110,9 @@ Back-end api
   <img width="900" src="http://www.bdkyr.com/open_galaxy/static/img/login_process.png">
 </p>
 
+## 系统分析设计详解 帮你讲透 整个系统
+[地址](http://note.youdao.com/noteshare?id=7c7144df190967b2cb318f10adb33ee3) 帮你讲透 整个系统
+
 ## 安装文档
 
 
