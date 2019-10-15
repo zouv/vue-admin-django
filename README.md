@@ -102,7 +102,7 @@ Back-end api
 
 ## 后端代码风格详解  
  <p align="center">
-  <img width="900" src="http://www.bdkyr.com/open_galaxy/static/img/backend_code.png">
+  <img width="900" src="./backend_code.png">
 </p>
 ## 安装文档
 
