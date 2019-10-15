@@ -96,25 +96,9 @@ Back-end api
 ```
 
 ## 前后端代码风格
-前段：  
-frontend  
- --build  
- --config  
- --static  
- --src  
- -------api  
- -------assets  
- -------components  
- -------directive  
- -------filters  
- -------icons  
- -------lang  
- -------router  
- -------store  
- -------styles  
- -------utils  
- -------vendor  
- -------views  
+<p align="center">
+  <img width="900" src="./frontend_code.jpg">
+</p> 
 
 ## 后端代码风格详解  
  <p align="center">
