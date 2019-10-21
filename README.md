@@ -111,7 +111,7 @@ Back-end api
 </p>
 
 ## 系统分析设计详解 帮你讲透 整个系统
-[地址](http://note.youdao.com/noteshare?id=7c7144df190967b2cb318f10adb33ee3) 帮你讲透 整个系统
+[地址](http://note.youdao.com/noteshare?id=189426b4aa392176cfe56e839160824e) 帮你讲透 整个系统
 
 ## 安装文档
 
