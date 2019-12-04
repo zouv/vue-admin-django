@@ -1,4 +1,4 @@
-Django==2.1.4
+Django==2.1.11
 django-appconf==1.0.2
 django-cors-headers==2.4.0
 django-crispy-forms==1.7.2
