@@ -53,3 +53,4 @@ staticfiles/
 
 !.gitignore
 !.gitkeep
+.vscode

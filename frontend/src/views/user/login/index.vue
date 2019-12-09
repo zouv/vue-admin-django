@@ -361,12 +361,14 @@
             this.loading = true
             this.$store.dispatch('LoginByUsername', this.loginForm).then(() => {
               this.loading = false
+              console.log("login___", this.redirect);
               if (this.redirect.indexOf('http') == 0) {
+                console.log("login___1");
                 window.location.href = this.redirect
               } else {
+                console.log("login___2");
                 this.$router.push({path: this.redirect || '/'})
               }
-
             }).catch(() => {
               this.loading = false
             })

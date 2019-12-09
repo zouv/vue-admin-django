@@ -9,7 +9,7 @@ import datetime
 from dotenv import load_dotenv
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-load_dotenv(dotenv_path=os.path.join(BASE_DIR, '../.env'), override=True)
+load_dotenv(dotenv_path=os.path.join(BASE_DIR, './.env'), override=True)
 # 设置 apps, extra_apps 目录
 sys.path.insert(0, BASE_DIR)
 app_dir = os.path.join(BASE_DIR, 'apps')

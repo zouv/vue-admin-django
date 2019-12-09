@@ -324,9 +324,10 @@ export function parseURL(url) {
 }
 
 export function getDomain(url) {
-  return document.location.protocol + "//" + document.domain
+  // return document.location.protocol + "//" + document.domain
+  // return document.location.protocol + "//192.168.6.199:8004";
+  return document.location.protocol + "//op.weiquip.com:8340";
 }
-
 
 export function getSocialLoginUrl(thirdpart) {
   return getDomain() + '/social/login/' + thirdpart + '/'
